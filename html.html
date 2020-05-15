@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        #islem,
+        #gosterge {
+            padding: 5px;
+            text-align: right;
+        }
+        
+        #gosterge {
+            height: 60px;
+            background: #07b6b6;
+            color: #333;
+            font-size: 1.8em;
+            text-align: right;
+            line-height: 40px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        #islem {
+            height: 20px;
+            background: rgb(112, 111, 111);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="genel">
+        <div class="container">
+
+            <div class="item-1">
+                <p id="islem"></p>
+            </div>
+
+            <div class="item-1">
+                <input type="text" id="sonuc">
+            </div>
+
+            <div class="item">
+                <input type="button" name="C" value="C" onClick="temizle()">
+            </div>
+
+            <div class="item">
+                <button>.</button>
+            </div>
+
+            <div class="item">
+                <button>/</button>
+            </div>
+
+            <div class="item">
+                <button>*</button>
+            </div>
+
+            <div class="item">
+                <button>-</button>
+            </div>
+
+            <div class="item">
+                <button>7</button>
+            </div>
+
+            <div class="item">
+                <button>8</button>
+            </div>
+
+            <div class="item">
+                <button>9</button>
+            </div>
+
+            <div class="item">
+                <button>0</button>
+            </div>
+
+            <div class="item">
+                <button>+</button>
+            </div>
+
+            <div class="item">
+                <button>3</button>
+            </div>
+
+            <div class="item">
+                <button>4</button>
+            </div>
+
+            <div class="item">
+                <button>5</button>
+            </div>
+
+            <div class="item">
+                <button>6</button>
+            </div>
+
+            <div class="item">
+                <button>=</button>
+            </div>
+
+            <div class=" item-2">
+                <button>1</button>
+            </div>
+
+            <div class=" item-2">
+                <button>2</button>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script>
+        function temizle() {
+            _sayilar = 0;
+            _sayiUzunluk = 0;
+            var sifir = document.getElementById("sonuc");
+            sifir.value = "";
+
+        }
+        var _sayilar = document.getElementsByTagName("button"),
+               _sayiUzunluk = _sayilar.length,
+               i = 0,
+               _sonuc = document.getElementById("sonuc");
+
+        for (i = 0; i < _sayiUzunluk; i++) {   
+            _sayilar[i].onclick = hesapla; 
+        }
+
+         
+        function hesapla() {   
+            var _deger = this.innerHTML;
+
+               
+            if (_deger == "=") {     
+                try {       
+                    _sonuc.value = eval(_sonuc.value);     
+                } catch (e) {       
+                    _sonuc.value = "0";     
+                }     
+                return;   
+            }
+
+               
+            _sonuc.value += _deger;
+        }
+    </script>
+
+
+</body>
+
+</html>

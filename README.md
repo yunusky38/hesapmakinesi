@@ -1,2 +1,0 @@
-# hesapmakinesi
- Hesap Makinesi Yapımı
